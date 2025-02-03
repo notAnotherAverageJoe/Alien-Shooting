@@ -31,13 +31,17 @@ function love.update(dt)
 end
 
 function love.draw()
-    love.graphics.draw(sprites.sky, 0, 0)
-    love.graphics.setColor(1, 0, 0)
     love.graphics.setColor(1, 1, 1)
+    love.graphics.draw(sprites.sky, 0, 0)
+    -- sets this section to black
+    love.graphics.setColor(0,0,0)
     love.graphics.setFont(gameFont)
     love.graphics.print("Score: " .. score, 5, 5)
     love.graphics.print("Misses: " .. missedShots, 500, 5)
     love.graphics.print("Time: " .. math.ceil(timer), 300, 0)
+    -- setting it back to white
+    love.graphics.setColor(1, 1, 1)
+
     if gameState == 1 then
         love.graphics.printf("Click anyhwere to begin!", 0, 250, love.graphics.getWidth(), "center")
     end
@@ -54,8 +58,9 @@ function love.mousepressed(x, y, button, istough, presses)
             score = score + 1
             target.x = math.random(target.radius, love.graphics.getWidth() - target.radius)
             target.y = math.random(target.radius, love.graphics.getHeight() - target.radius)
-        else
+        elseif mouseToTarget > target.radius then
             missedShots = missedShots + 1
+            score = score - 1
         end
     elseif button == 1 and gameState == 1 then
         gameState = 2
