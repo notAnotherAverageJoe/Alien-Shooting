@@ -15,7 +15,7 @@ function love.load()
     sprites = {}
     sprites.sky = love.graphics.newImage('sprites/sky3.png')
 
-    sprites.target = love.graphics.newImage('sprites/aliens.png')
+    sprites.target = love.graphics.newImage('sprites/aliens2.png')
     sprites.crosshairs = love.graphics.newImage('sprites/ch.png')
     love.mouse.setVisible(false)
 end
@@ -67,7 +67,7 @@ function love.mousepressed(x, y, button, istough, presses)
         end
     elseif button == 1 and gameState == 1 then
         gameState = 2
-        timer = 10
+        timer = 12
         score = 0
         missedShots = 0
     end
