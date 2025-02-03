@@ -60,7 +60,10 @@ function love.mousepressed(x, y, button, istough, presses)
             target.y = math.random(target.radius, love.graphics.getHeight() - target.radius)
         elseif mouseToTarget > target.radius then
             missedShots = missedShots + 1
+            if score > 0 then
             score = score - 1
+            else score =0
+            end
         end
     elseif button == 1 and gameState == 1 then
         gameState = 2
