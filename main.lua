@@ -15,7 +15,7 @@ function love.load()
     sprites = {}
     sprites.sky = love.graphics.newImage('sprites/sky3.png')
 
-    sprites.target = love.graphics.newImage('sprites/target.png')
+    sprites.target = love.graphics.newImage('sprites/aliens.png')
     sprites.crosshairs = love.graphics.newImage('sprites/crosshairs.png')
     love.mouse.setVisible(false)
 end
