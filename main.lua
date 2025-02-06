@@ -43,7 +43,7 @@ function love.draw()
     love.graphics.setColor(1, 1, 1)
 
     if gameState == 1 then
-        love.graphics.printf("Click anyhwere to begin!", 0, 250, love.graphics.getWidth(), "center")
+        love.graphics.printf("Click anywhere to begin!", 0, 250, love.graphics.getWidth(), "center")
     end
     if gameState == 2 then
         love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
